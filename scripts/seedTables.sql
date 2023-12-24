@@ -10,7 +10,8 @@ VALUES
 -- seeding carts
 INSERT INTO carts (user_id, status)
 SELECT
-  users.id
+  users.id,
+  'OPEN'
 FROM users;
 
 -- seeding carts_items
