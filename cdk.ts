@@ -39,6 +39,9 @@ const cartService = new NodejsFunction(stack, 'cartServiceLambda', {
       'tedious',
       'better-sqlite3',
       'oracledb',
+      '@nestjs/websockets', 
+      '@nestjs/microservices/microservices-module', 
+      '@nestjs/microservices'
     ],
   },
 });
