@@ -18,8 +18,10 @@ export class CartController {
   @UseGuards(BasicAuthGuard)
   @Get()
   async findUserCart(@Req() req: AppRequest) {
-    const cart = await this.cartService.findOrCreateByUserId(getUserIdFromRequest(req));
+    console.log('findUserCart req',req);
 
+    const cart = await this.cartService.findOrCreateByUserId(getUserIdFromRequest(req));
+    console.log('findUserCart cart', cart)
     return {
       statusCode: HttpStatus.OK,
       message: 'OK',

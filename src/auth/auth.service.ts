@@ -22,7 +22,6 @@ export class AuthService {
   }
 
   login(user: User, type) {
-    console.log(user);
     const LOGIN_MAP = {
       jwt: this.loginJWT,
       basic: this.loginBasic,
@@ -35,7 +34,7 @@ export class AuthService {
 
   loginJWT(user: User) {
     const payload = { username: user.name, sub: user.id };
-    console.log(payload);
+
     return {
       token_type: 'Bearer',
       access_token: this.jwtService.sign(payload),

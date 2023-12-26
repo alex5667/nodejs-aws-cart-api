@@ -16,7 +16,7 @@ export class CartService {
     .where('user_id', userId)
     .where('status', status)
     .first();
-
+    console.log('cart', cart);
     if(!cart) {
       return null;
     }
@@ -33,6 +33,8 @@ export class CartService {
       },
       count: item.count,
     }));
+    console.log('cartItems', cartItems);
+    console.log('productsData', productsData);
 
     cart.items = productsData;
 
