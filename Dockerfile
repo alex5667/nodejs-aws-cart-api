@@ -4,7 +4,7 @@ WORKDIR /app
 FROM base AS dependencies
 WORKDIR /app
 COPY package*.json ./
-RUN npm install \
+RUN npm install --legacy-peer-deps\
   && npm cache clean --force
 
 FROM dependencies as build
